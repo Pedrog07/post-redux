@@ -1,11 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
+import { Switch, BrowserRouter, Route } from 'react-router-dom'
 import './App.css';
+import Home from './pages';
 
 function App() {
   return (
-    <div className="App">
+    <BrowserRouter>
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route path='/'/>
+      </Switch>
+    </BrowserRouter>
+  );
+}
+
+export default App;
+
+
+/* 
+<div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Counter />
@@ -52,7 +65,4 @@ function App() {
         </span>
       </header>
     </div>
-  );
-}
-
-export default App;
+*/
